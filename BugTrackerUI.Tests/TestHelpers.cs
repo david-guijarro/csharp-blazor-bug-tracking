@@ -32,7 +32,8 @@ namespace BugTrackerUI.Tests
 
         public static string GetRootString()
         {
-            return ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar;
+            var rootPath = System.IO.Directory.GetCurrentDirectory();
+            return rootPath.Substring(0, rootPath.IndexOf("BugTrackerUI.Tests"));
         }
     }
 }
